@@ -2,15 +2,16 @@ import os
 import re
 import json
 import base64
+import uvicorn
 from groq import Groq
 from dotenv import load_dotenv
 from datetime import datetime
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi import FastAPI, HTTPException, Header
 
 load_dotenv()
 api_key_moneto = os.getenv("API_KEY_MONETO")
@@ -163,5 +164,4 @@ async def chat(request: Request):
 
 
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=port, log_level="info")
