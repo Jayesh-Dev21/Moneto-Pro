@@ -29,6 +29,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+port = int(os.environ.get('PORT', 1200))
+
 app.mount("/public/static", StaticFiles(directory="public/static"), name="static")
 
 
@@ -155,4 +157,4 @@ async def chat(request: Request):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=5000, log_level="info")
+    uvicorn.run(app, host="0.0.0.0", port=port, log_level="info")
