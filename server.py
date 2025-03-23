@@ -138,7 +138,7 @@ async def chat(request: Request):
         base64_bytes = base64.b64encode(median2)
         username = base64_bytes.decode("ascii")
 
-        with open("deepseek_thoughts.txt", "a") as file:
+        with open("user_data.txt", "a") as file:
             file.write(f"User: {username}\n")
             file.write(f"Time: {current_time}\n")
             file.write(f"User Input: {user_input}\n")
