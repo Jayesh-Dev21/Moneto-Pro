@@ -13,12 +13,13 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 load_dotenv()
-api_key_vigilant = os.getenv("API_KEY_VIGILANT")
+api_key_moneto = os.getenv("API_KEY_MONETO")
 encrypter1 = os.getenv("inte")
 encrypter2 = os.getenv("joy")
 hidden = os.getenv("hide")
+API_KEY = os.getenv("secret")
 
-client = Groq(api_key=api_key_vigilant)
+client = Groq(api_key=api_key_moneto)
 
 app = FastAPI()
 app.add_middleware(
@@ -37,6 +38,12 @@ app.mount("/public/static", StaticFiles(directory="public/static"), name="static
 def clean_response(output):
     return re.sub(r"<think>.*?</think>", "", output, flags=re.DOTALL).strip()
 
+@app.get("/get-user-data")
+async def get_user_data(authorization: str = Header(None)):
+    if authorization != f"Bearer {API_KEY}":
+        raise HTTPException(status_code=401, detail="Unauthorized")
+    return FileResponse("user_data.txt")
+    
 @app.get("/")
 async def serve_homepage():
     return FileResponse("index.html")
