@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Send message to AI backend
     async function sendToAI(username, message) {
         try {
-            let response = await fetch("chat", {
+            let response = await fetch("/chat", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json; charset=UTF-8"
