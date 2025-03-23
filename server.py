@@ -29,7 +29,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-port = int(os.environ.get('PORT', 1200))
+port = int(os.environ.get('PORT', 8080))
 
 app.mount("/public/static", StaticFiles(directory="public/static"), name="static")
 
