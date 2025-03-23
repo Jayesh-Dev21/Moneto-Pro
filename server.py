@@ -125,7 +125,7 @@ async def chat(request: Request):
 
             stop=None,
 
-            stream=True,
+            stream=False,
         )
 
         ai_response = chat_completion.choices[0].message.content
