@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance AI chatbot</title>
+    <link rel="icon" href="public/static/images/icon.png" type="image/png">
+    <link rel="stylesheet" href="public/static/style/moneto-pro.css">
+</head>
+<body>
+    <h1>Moneto Pro V0.1</h1>
+    <hr>
+    <form id="usernameForm">
+        <label for="username">Enter your username:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Start Chat</button>
+    </form>
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" title="Toggle dark/light mode">☀️</button>
+    <!-- Chat Interface -->
+    <div id="chat-container" style="display: none;">
+        <div id="chat-box"></div>
+        <form id="chatForm">
+            <input type="text" id="userInput" placeholder="Type your message..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <script src="public/static/js/moneto-pro.js"></script>
+</body>
+</html>

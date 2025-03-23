@@ -1,0 +1,122 @@
+:root {
+    --light-bg: #bbf47e;
+    --light-text: #333333;
+    --light-text-me: rgb(210, 98, 92);
+    --light-primary: #007bff;
+    --light-secondary: #6c757d;
+    --light-border: #dddddd;
+    --light-input-bg: #f8f9fa;
+    --light-hover: #e2e6ea;
+    --light-shadow: rgba(0, 0, 0, 0.1);
+  
+    --dark-bg: #121212;
+    --dark-text: #f1f1f1;
+    --dark-text-me: rgb(12, 243, 12);
+    --dark-primary: #1e90ff;
+    --dark-secondary: #b0b3b8;
+    --dark-border: #444;
+    --dark-input-bg: #222;
+    --dark-hover: #333;
+    --dark-shadow: rgba(255, 255, 255, 0.1);
+  
+    --bg: var(--light-bg);
+    --text: var(--light-text);
+    --text-me: var(--light-text-me);
+    --primary: var(--light-primary);
+    --secondary: var(--light-secondary);
+    --border: var(--light-border);
+    --input-bg: var(--light-input-bg);
+    --hover: var(--light-hover);
+    --shadow: var(--light-shadow);
+  }
+  
+  .dark-theme {
+    --bg: var(--dark-bg);
+    --text: var(--dark-text);
+    --text-me: var(--dark-text-me);
+    --primary: var(--dark-primary);
+    --secondary: var(--dark-secondary);
+    --border: var(--dark-border);
+    --input-bg: var(--dark-input-bg);
+    --hover: var(--dark-hover);
+    --shadow: var(--dark-shadow);
+  }
+  
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  text-align: center;
+  padding: 50px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+.container-low {
+    max-width: 600px;
+    margin: auto;
+  }
+
+.toggle-btn {
+    background-color: var(--bg);
+    border: none;
+    transition: background 0.3s, color 0.3s;
+}
+.toggle-btn:hover{
+    background-color: var(--light-primary);
+    padding-top: 5.5px;
+    padding-bottom: 5.5px;
+    border-radius: 50%;
+    transition: background 0.3s, color 0.3s;
+}
+.butt:not(:hover) {
+    transition: background-color 0.2s;
+  }
+
+h1 {
+  color: var(--primary);
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: rgb(6, 6, 6);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.no-button {
+    display: inline-block;
+    background: var(--bg);
+    color: var(--text-me);
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+
+.button:hover {
+  opacity: 0.8;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.light-theme {
+  --bg: var(--light-bg);
+  --text: var(--light-text);
+  --primary: var(--light-primary);
+}
